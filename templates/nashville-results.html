@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF8"/>
+    <title>Table Demo</title>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            padding: 5px;
+        }
+    </style>
+    <title>City Trend Results</title>
+</head>
+<body>
+    <h1>Here are your results for Nashville!</h1>
+    <br>
+    <h2>Yelp</h2>
+    <table>
+        <tr>
+            <th>Yelp Rank</th>
+            <th>Business</th>
+            <th>Type</th>
+            <th>Address</th>
+            <th>Zipcode</th>
+        </tr>
+        {% if yelp %}
+            {% for row in yelp %}
+            <tr>
+                <td>{{row[2]}}</td>
+                <td>{{row[3]}}</td>
+                <td>{{row[4]}}</td>
+                <td>{{row[5]}}</td>
+                <td>{{row[6]}}</td>
+            </tr>
+            {% endfor %}
+        {% endif %}
+    </table>
+    <br>
+    <h2>News</h2>
+    <table>
+        <tr>
+            <th>articleNumber</th>
+            <th>articleSource</th>
+            <th>articleHeadline</th>
+            <th>articleText</th>
+        </tr>
+        {% if news %}
+            {% for row in news %}
+            <tr>
+                <td>{{row[2]}}</td>
+                <td>{{row[3]}}</td>
+                <td>{{row[4]}}</td>
+                <td>{{row[5]}}</td>
+            </tr>
+            {% endfor %}
+        {% endif %}
+    </table>
+    <br>
+    {% if twitter %}
+    <h2>Twitter Trends</h2>
+    <table>
+        <tr>
+            <th>1</th>
+            <th>2</th>
+            <th>3</th>
+            <th>4</th>
+            <th>5</th>
+            <th>6</th>
+            <th>7</th>
+            <th>8</th>
+            <th>9</th>
+            <th>10</th>
+        </tr>
+            {% for row in twitter %}
+            <tr>
+                <td>{{row[2]}}</td>
+                <td>{{row[3]}}</td>
+                <td>{{row[4]}}</td>
+                <td>{{row[5]}}</td>
+                <td>{{row[6]}}</td>
+                <td>{{row[7]}}</td>
+                <td>{{row[8]}}</td>
+                <td>{{row[9]}}</td>
+                <td>{{row[10]}}</td>
+                <td>{{row[11]}}</td>
+            </tr>
+            {% endfor %}
+    </table>
+    {% endif %}
+    <a href="/">Return to home page</a>
+</body>
+</html>
